@@ -5,9 +5,11 @@
   "license": "MIT",
   "author": "bryce-sampson <sampsonbrycea@gmail.com>",
   "devDependencies": {
+    "jest": "^24.8.0",
     "parcel-bundler": "^1.12.3"
   },
   "scripts": {
+    "test": "jest --colors",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
   }
