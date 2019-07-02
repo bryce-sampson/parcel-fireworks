@@ -209,7 +209,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _default = function _default() {
   var container = document.getElementById("container");
-  var fireworks = new _fireworksCanvas.default(container);
+  var options = {
+    maxRockets: 200,
+    rocketSpawnInterval: 5,
+    numParticles: Math.floor(500 * Math.random()),
+    explosionMinHeight: 0.2,
+    explosionMaxHeight: 0.7,
+    explosionChance: 0.01
+  };
+  var fireworks = new _fireworksCanvas.default(container, options);
   fireworks.start();
 };
 
@@ -250,7 +258,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51609" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52083" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
